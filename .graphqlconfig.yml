@@ -1,0 +1,16 @@
+projects:
+  amplifypasskeysdemo:
+    schemaPath: amplify/backend/api/amplifypasskeysdemo/build/schema.graphql
+    includes:
+      - src/graphql/**/*.ts
+    excludes:
+      - ./amplify/**
+      - src/api/API.ts
+    extensions:
+      amplify:
+        codeGenTarget: typescript
+        generatedFileName: src/api/API.ts
+        docsFilePath: src/graphql
+        region: us-east-1
+        apiId: null
+        maxDepth: 2

@@ -1,5 +1,5 @@
 {
-  "name": "mongo-authn-app-router",
+  "name": "amplify-pangea-authn",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,10 +12,10 @@
     "@pangeacyber/react-auth": "^0.0.12",
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-slot": "^1.0.2",
+    "aws-amplify": "^6.2.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-react": "^0.373.0",
-    "mongodb": "^6.5.0",
     "next": "14.2.3",
     "pangea-node-sdk": "^3.7.0",
     "react": "^18",

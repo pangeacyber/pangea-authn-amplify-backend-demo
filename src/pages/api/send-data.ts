@@ -1,10 +1,8 @@
 import { getUserInfo, withAPIAuthentication } from "@/utils/authCheck";
 // import clientPromise from "../../lib/mongodb";
 import { NextApiRequest, NextApiResponse } from 'next';
-import { generateClient } from "aws-amplify/api";
 import { createICECREAM } from '../../graphql/mutations';
-
-const client = generateClient();
+import amplifyClient from "../../utils/amplify";
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
     const { userEmail, userProfile } = await getUserInfo(req);
@@ -18,7 +16,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 }
 
 async function createFlavorOnDynamo(flavor: string, email: string) {
-    const result = await client.graphql({
+    const result = await amplifyClient.graphql({
         query: createICECREAM,
         variables: {
           input: {

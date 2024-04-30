@@ -40,7 +40,7 @@ export function AuthenticatedPage({user, logout, onSubmit}: any) {
         <div className="space-y-4">
           <h2 className="text-2xl font-bold">Whats your favorite ice cream flavor?</h2>
           <div className="flex items-center space-x-4">
-            <Input className="flex-1" onChange={(e) => {setFlavor(e.target.value)}} placeholder="Enter your favorite flavor" type="text" />
+            <Input className="flex-1" onChange={(e) => {setFlavor(e.target.value)}} value={flavor} placeholder="Enter your favorite flavor" type="text" />
             <Button onClick={()=> {
               onSubmit(flavor);
               setFlavor("");

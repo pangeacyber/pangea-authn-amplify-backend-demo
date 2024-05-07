@@ -15,6 +15,7 @@ Make sure you have the [Amplify CLI](https://docs.amplify.aws/gen1/javascript/to
 
 Then, run
 ```bash
+amplify init
 amplify push -y
 ```
 

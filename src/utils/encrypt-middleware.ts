@@ -11,7 +11,7 @@ export const encryptBodyInTransit = (apiHandler: any) => {
         try {
             if(req.body.burn) {
                 const createResponse = await vault.encryptStructured({
-                    id: "pvi_ygtb7idjjnm4s5odkpclemcjbdhcbd6n",
+                    id: process.env.PANGEA_VAULT_KEY_ID as string,
                     structured_data: req.body,
                     filter: "$.burn"
                 })
@@ -32,7 +32,7 @@ export const encryptBodyInTransit = (apiHandler: any) => {
 export const decryptBodyInTransit = async (body: any) => {
         try {
             const createResponse = await vault.decryptStructured({
-                    id: "pvi_ygtb7idjjnm4s5odkpclemcjbdhcbd6n",
+                    id: process.env.PANGEA_VAULT_KEY_ID as string,
                     structured_data: {"data": body},
                     filter: "$.data[*].burn"
             })

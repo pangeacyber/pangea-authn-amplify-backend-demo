@@ -21,11 +21,28 @@
           "secretsPathAmplifyAppId": "d1jx21ru1aj1xe",
           "deploymentBucketName": "amplify-amplify80073ab350e74-staging-e8c63-deployment",
           "s3Key": "amplify-builds/sofetchLambda-6943704832304f655437-build.zip"
-        },
-        "fetchDBTrigger19469e38": {
-          "deploymentBucketName": "amplify-amplify80073ab350e74-staging-e8c63-deployment",
-          "s3Key": "amplify-builds/fetchDBTrigger19469e38-487268536636336a4675-build.zip"
         }
+      },
+      "storage": {
+        "fetchDB": {}
+      }
+    }
+  },
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplifypasskeysdemo-dev-bd3f7-authRole",
+      "UnauthRoleArn": "arn:aws:iam::180197846871:role/amplify-amplifypasskeysdemo-dev-bd3f7-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::180197846871:role/amplify-amplifypasskeysdemo-dev-bd3f7-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-amplifypasskeysdemo-dev-bd3f7-deployment",
+      "UnauthRoleName": "amplify-amplifypasskeysdemo-dev-bd3f7-unauthRole",
+      "StackName": "amplify-amplifypasskeysdemo-dev-bd3f7",
+      "StackId": "arn:aws:cloudformation:us-east-2:180197846871:stack/amplify-amplifypasskeysdemo-dev-bd3f7/136e3650-0c7d-11ef-8d5d-0a5cdea0add9",
+      "AmplifyAppId": "do6i3vpdoqza2"
+    },
+    "categories": {
+      "api": {
+        "amplifypasskeysdemo": {}
       },
       "storage": {
         "fetchDB": {}

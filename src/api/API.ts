@@ -77,6 +77,45 @@ export type DeleteICECREAMInput = {
   id: string,
 };
 
+export type CreateSOFETCHDBInput = {
+  id?: string | null,
+  name?: string | null,
+  burn?: string | null,
+  image?: string | null,
+};
+
+export type ModelSOFETCHDBConditionInput = {
+  name?: ModelStringInput | null,
+  burn?: ModelStringInput | null,
+  image?: ModelStringInput | null,
+  and?: Array< ModelSOFETCHDBConditionInput | null > | null,
+  or?: Array< ModelSOFETCHDBConditionInput | null > | null,
+  not?: ModelSOFETCHDBConditionInput | null,
+  createdAt?: ModelStringInput | null,
+  updatedAt?: ModelStringInput | null,
+};
+
+export type SOFETCHDB = {
+  __typename: "SOFETCHDB",
+  id: string,
+  name?: string | null,
+  burn?: string | null,
+  image?: string | null,
+  createdAt: string,
+  updatedAt: string,
+};
+
+export type UpdateSOFETCHDBInput = {
+  id: string,
+  name?: string | null,
+  burn?: string | null,
+  image?: string | null,
+};
+
+export type DeleteSOFETCHDBInput = {
+  id: string,
+};
+
 export type ModelICECREAMFilterInput = {
   id?: ModelIDInput | null,
   email?: ModelStringInput | null,
@@ -107,6 +146,24 @@ export type ModelIDInput = {
 export type ModelICECREAMConnection = {
   __typename: "ModelICECREAMConnection",
   items:  Array<ICECREAM | null >,
+  nextToken?: string | null,
+};
+
+export type ModelSOFETCHDBFilterInput = {
+  id?: ModelIDInput | null,
+  name?: ModelStringInput | null,
+  burn?: ModelStringInput | null,
+  image?: ModelStringInput | null,
+  createdAt?: ModelStringInput | null,
+  updatedAt?: ModelStringInput | null,
+  and?: Array< ModelSOFETCHDBFilterInput | null > | null,
+  or?: Array< ModelSOFETCHDBFilterInput | null > | null,
+  not?: ModelSOFETCHDBFilterInput | null,
+};
+
+export type ModelSOFETCHDBConnection = {
+  __typename: "ModelSOFETCHDBConnection",
+  items:  Array<SOFETCHDB | null >,
   nextToken?: string | null,
 };
 
@@ -148,6 +205,17 @@ export type ModelSubscriptionStringInput = {
   beginsWith?: string | null,
   in?: Array< string | null > | null,
   notIn?: Array< string | null > | null,
+};
+
+export type ModelSubscriptionSOFETCHDBFilterInput = {
+  id?: ModelSubscriptionIDInput | null,
+  name?: ModelSubscriptionStringInput | null,
+  burn?: ModelSubscriptionStringInput | null,
+  image?: ModelSubscriptionStringInput | null,
+  createdAt?: ModelSubscriptionStringInput | null,
+  updatedAt?: ModelSubscriptionStringInput | null,
+  and?: Array< ModelSubscriptionSOFETCHDBFilterInput | null > | null,
+  or?: Array< ModelSubscriptionSOFETCHDBFilterInput | null > | null,
 };
 
 export type CreateICECREAMMutationVariables = {
@@ -198,6 +266,57 @@ export type DeleteICECREAMMutation = {
   } | null,
 };
 
+export type CreateSOFETCHDBMutationVariables = {
+  input: CreateSOFETCHDBInput,
+  condition?: ModelSOFETCHDBConditionInput | null,
+};
+
+export type CreateSOFETCHDBMutation = {
+  createSOFETCHDB?:  {
+    __typename: "SOFETCHDB",
+    id: string,
+    name?: string | null,
+    burn?: string | null,
+    image?: string | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type UpdateSOFETCHDBMutationVariables = {
+  input: UpdateSOFETCHDBInput,
+  condition?: ModelSOFETCHDBConditionInput | null,
+};
+
+export type UpdateSOFETCHDBMutation = {
+  updateSOFETCHDB?:  {
+    __typename: "SOFETCHDB",
+    id: string,
+    name?: string | null,
+    burn?: string | null,
+    image?: string | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type DeleteSOFETCHDBMutationVariables = {
+  input: DeleteSOFETCHDBInput,
+  condition?: ModelSOFETCHDBConditionInput | null,
+};
+
+export type DeleteSOFETCHDBMutation = {
+  deleteSOFETCHDB?:  {
+    __typename: "SOFETCHDB",
+    id: string,
+    name?: string | null,
+    burn?: string | null,
+    image?: string | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
 export type GetICECREAMQueryVariables = {
   id: string,
 };
@@ -227,6 +346,44 @@ export type ListICECREAMSQuery = {
       id: string,
       email?: string | null,
       flavor?: string | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null >,
+    nextToken?: string | null,
+  } | null,
+};
+
+export type GetSOFETCHDBQueryVariables = {
+  id: string,
+};
+
+export type GetSOFETCHDBQuery = {
+  getSOFETCHDB?:  {
+    __typename: "SOFETCHDB",
+    id: string,
+    name?: string | null,
+    burn?: string | null,
+    image?: string | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type ListSOFETCHDBSQueryVariables = {
+  filter?: ModelSOFETCHDBFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type ListSOFETCHDBSQuery = {
+  listSOFETCHDBS?:  {
+    __typename: "ModelSOFETCHDBConnection",
+    items:  Array< {
+      __typename: "SOFETCHDB",
+      id: string,
+      name?: string | null,
+      burn?: string | null,
+      image?: string | null,
       createdAt: string,
       updatedAt: string,
     } | null >,
@@ -274,6 +431,54 @@ export type OnDeleteICECREAMSubscription = {
     id: string,
     email?: string | null,
     flavor?: string | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnCreateSOFETCHDBSubscriptionVariables = {
+  filter?: ModelSubscriptionSOFETCHDBFilterInput | null,
+};
+
+export type OnCreateSOFETCHDBSubscription = {
+  onCreateSOFETCHDB?:  {
+    __typename: "SOFETCHDB",
+    id: string,
+    name?: string | null,
+    burn?: string | null,
+    image?: string | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnUpdateSOFETCHDBSubscriptionVariables = {
+  filter?: ModelSubscriptionSOFETCHDBFilterInput | null,
+};
+
+export type OnUpdateSOFETCHDBSubscription = {
+  onUpdateSOFETCHDB?:  {
+    __typename: "SOFETCHDB",
+    id: string,
+    name?: string | null,
+    burn?: string | null,
+    image?: string | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnDeleteSOFETCHDBSubscriptionVariables = {
+  filter?: ModelSubscriptionSOFETCHDBFilterInput | null,
+};
+
+export type OnDeleteSOFETCHDBSubscription = {
+  onDeleteSOFETCHDB?:  {
+    __typename: "SOFETCHDB",
+    id: string,
+    name?: string | null,
+    burn?: string | null,
+    image?: string | null,
     createdAt: string,
     updatedAt: string,
   } | null,

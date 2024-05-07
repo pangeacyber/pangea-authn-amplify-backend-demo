@@ -44,3 +44,41 @@ export const listICECREAMS = /* GraphQL */ `query ListICECREAMS(
   APITypes.ListICECREAMSQueryVariables,
   APITypes.ListICECREAMSQuery
 >;
+export const getSOFETCHDB = /* GraphQL */ `query GetSOFETCHDB($id: ID!) {
+  getSOFETCHDB(id: $id) {
+    id
+    name
+    burn
+    image
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.GetSOFETCHDBQueryVariables,
+  APITypes.GetSOFETCHDBQuery
+>;
+export const listSOFETCHDBS = /* GraphQL */ `query ListSOFETCHDBS(
+  $filter: ModelSOFETCHDBFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listSOFETCHDBS(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      burn
+      image
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.ListSOFETCHDBSQueryVariables,
+  APITypes.ListSOFETCHDBSQuery
+>;

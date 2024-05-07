@@ -13,7 +13,22 @@
     },
     "categories": {
       "api": {
-        "amplifypasskeysdemo": {}
+        "amplifypasskeysdemo": {},
+        "sofetch": {}
+      },
+      "function": {
+        "sofetchLambda": {
+          "secretsPathAmplifyAppId": "d1jx21ru1aj1xe",
+          "deploymentBucketName": "amplify-amplify80073ab350e74-staging-e8c63-deployment",
+          "s3Key": "amplify-builds/sofetchLambda-6943704832304f655437-build.zip"
+        },
+        "fetchDBTrigger19469e38": {
+          "deploymentBucketName": "amplify-amplify80073ab350e74-staging-e8c63-deployment",
+          "s3Key": "amplify-builds/fetchDBTrigger19469e38-487268536636336a4675-build.zip"
+        }
+      },
+      "storage": {
+        "fetchDB": {}
       }
     }
   }

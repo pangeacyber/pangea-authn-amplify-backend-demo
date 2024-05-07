@@ -50,3 +50,48 @@ export const onDeleteICECREAM = /* GraphQL */ `subscription OnDeleteICECREAM($fi
   APITypes.OnDeleteICECREAMSubscriptionVariables,
   APITypes.OnDeleteICECREAMSubscription
 >;
+export const onCreateSOFETCHDB = /* GraphQL */ `subscription OnCreateSOFETCHDB($filter: ModelSubscriptionSOFETCHDBFilterInput) {
+  onCreateSOFETCHDB(filter: $filter) {
+    id
+    name
+    burn
+    image
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnCreateSOFETCHDBSubscriptionVariables,
+  APITypes.OnCreateSOFETCHDBSubscription
+>;
+export const onUpdateSOFETCHDB = /* GraphQL */ `subscription OnUpdateSOFETCHDB($filter: ModelSubscriptionSOFETCHDBFilterInput) {
+  onUpdateSOFETCHDB(filter: $filter) {
+    id
+    name
+    burn
+    image
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnUpdateSOFETCHDBSubscriptionVariables,
+  APITypes.OnUpdateSOFETCHDBSubscription
+>;
+export const onDeleteSOFETCHDB = /* GraphQL */ `subscription OnDeleteSOFETCHDB($filter: ModelSubscriptionSOFETCHDBFilterInput) {
+  onDeleteSOFETCHDB(filter: $filter) {
+    id
+    name
+    burn
+    image
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnDeleteSOFETCHDBSubscriptionVariables,
+  APITypes.OnDeleteSOFETCHDBSubscription
+>;

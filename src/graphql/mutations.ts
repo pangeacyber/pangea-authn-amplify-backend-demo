@@ -59,3 +59,57 @@ export const deleteICECREAM = /* GraphQL */ `mutation DeleteICECREAM(
   APITypes.DeleteICECREAMMutationVariables,
   APITypes.DeleteICECREAMMutation
 >;
+export const createSOFETCHDB = /* GraphQL */ `mutation CreateSOFETCHDB(
+  $input: CreateSOFETCHDBInput!
+  $condition: ModelSOFETCHDBConditionInput
+) {
+  createSOFETCHDB(input: $input, condition: $condition) {
+    id
+    name
+    burn
+    image
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.CreateSOFETCHDBMutationVariables,
+  APITypes.CreateSOFETCHDBMutation
+>;
+export const updateSOFETCHDB = /* GraphQL */ `mutation UpdateSOFETCHDB(
+  $input: UpdateSOFETCHDBInput!
+  $condition: ModelSOFETCHDBConditionInput
+) {
+  updateSOFETCHDB(input: $input, condition: $condition) {
+    id
+    name
+    burn
+    image
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.UpdateSOFETCHDBMutationVariables,
+  APITypes.UpdateSOFETCHDBMutation
+>;
+export const deleteSOFETCHDB = /* GraphQL */ `mutation DeleteSOFETCHDB(
+  $input: DeleteSOFETCHDBInput!
+  $condition: ModelSOFETCHDBConditionInput
+) {
+  deleteSOFETCHDB(input: $input, condition: $condition) {
+    id
+    name
+    burn
+    image
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.DeleteSOFETCHDBMutationVariables,
+  APITypes.DeleteSOFETCHDBMutation
+>;

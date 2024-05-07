@@ -3,3 +3,10 @@ type ICECREAM @model @auth(rules: [{allow: public}]) {
   email: AWSEmail
   flavor: String
 }
+
+type SOFETCHDB @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  name: String
+  burn: String
+  image: String
+}

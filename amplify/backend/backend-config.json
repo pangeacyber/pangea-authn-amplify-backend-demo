@@ -21,6 +21,105 @@
       },
       "providerPlugin": "awscloudformation",
       "service": "AppSync"
+    },
+    "sofetch": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "sofetchLambda"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "fetchDBTrigger19469e38": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "fetchDB"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "sofetchLambda": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributeEnvMap": {
+            "Arn": "TABLE_ARN",
+            "Name": "TABLE_NAME"
+          },
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "storage",
+          "resourceName": "fetchDB"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_fetchDBTrigger19469e38_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fetchDBTrigger19469e38"
+        }
+      ]
+    },
+    "AMPLIFY_function_fetchDBTrigger19469e38_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "fetchDBTrigger19469e38"
+        }
+      ]
+    },
+    "AMPLIFY_function_sofetchLambda_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sofetchLambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_sofetchLambda_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sofetchLambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_sofetchLambda_secretsPathAmplifyAppId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sofetchLambda"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "fetchDB": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
     }
   }
 }

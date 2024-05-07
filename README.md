@@ -1,12 +1,29 @@
-# Pangea AuthN with Mongo Example
-(Page Router Mode)
+# Pangea AuthN Amplify Burn Book Demo
+This is a demo that demonstrates how to perform encryption in transit using [Pangea Vault](https://pangea.cloud/services/vault?utm_source=github&utm_medium=aws-amplify-stream) and AWS Amplify.
 
-## Getting Started
-Copy the `.env.example` file to `.env.local` and copy your the environment variables from the Pangea AuthN console into your file.
+## Get Started
+### Step 1: Setup .env
+First copy the `.env.example` into a `.env.local` file
+```bash
+cp .env.example .env.local
+```
 
+Then signup for an account on [pangea.cloud](https://pangea.cloud/?utm_source=github&utm_medium=aws-amplify-stream) and copy paste your tokens into the env file.
 
-## How AuthN is setup
-1. Look at the [`_app_.tsx`](./src/pages/_app.tsx) and notice the `<AuthProvider>` wrapper which retains Pangea Auth context across the app.
-2. Look at the [`index.tsx`](./src/pages/index.tsx) and [`authenticated.tsx`](./src/pages/authenticated.tsx) and notice how the `useAuth` hook allows you to enable conditional routing based on user authentication status.
-3. To perform serverside authentication, look at [`utils/authCheck.js`](./src/utils/authCheck.js) which defines a `withAPIAuthentication` middleware that automatically checks if a user is logged in before hitting the API logic.
-4. Finally look at the `getUserInfo` function that is imported from the [`utils/authCheck.js`](./src/utils/authCheck.js) in the [`send-data.ts`](./src/pages/api/send-data.ts) API, which allows you to pull user info from the server side.
+### Step 2: Push Amplify configuration
+Make sure you have the [Amplify CLI](https://docs.amplify.aws/gen1/javascript/tools/cli/start/set-up-cli/) installed on your computer.
+
+Then, run
+```bash
+amplify push -y
+```
+
+Once that is completed copy paste the GraphQL end point and secrets into the `.env.local` file.
+
+### Step 3: Spin up dev server
+To start the dev server, run
+```bash
+npm run dev
+```
+
+If you have any questions, need help with Pangea, or want to share your feedback with us, reach out on the [Pangea Community](https://community.pangea.cloud/?utm_source=github&utm_medium=aws-amplify-stream)

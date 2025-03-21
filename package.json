@@ -17,7 +17,7 @@
     "aws-amplify": "^6.13.5",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "lucide-react": "^0.482.0",
+    "lucide-react": "^0.483.0",
     "next": "15.2.3",
     "pangea-node-sdk": "^4.4.0",
     "react": "18.3.1",

@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@pangeacyber/react-auth": "^0.0.17",
+    "@pangeacyber/react-auth": "^0.0.18",
     "@radix-ui/react-icons": "^1.3.2",
     "@radix-ui/react-slot": "^1.2.0",
     "@radix-ui/react-toast": "^1.2.7",

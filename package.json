@@ -19,7 +19,7 @@
     "clsx": "^2.1.1",
     "lucide-react": "^0.525.0",
     "next": "15.4.2",
-    "pangea-node-sdk": "^5.1.0",
+    "pangea-node-sdk": "^5.2.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "tailwind-merge": "^3.3.1",
